@@ -1,0 +1,17 @@
+FROM python:3.11-slim
+LABEL author=${LABEL}
+
+# копируем файлы в рабочую директорию
+COPY . ./ml_service
+
+# выбор рабочей директории
+WORKDIR ml_service 
+
+# установка библиотек
+RUN pip3 install -r requirements.txt
+
+# указываем порт
+EXPOSE ${APP_PORT}
+
+# запуск
+CMD uvicorn ml_service.flats_app:app --port ${APP_PORT} --host 0.0.0.0

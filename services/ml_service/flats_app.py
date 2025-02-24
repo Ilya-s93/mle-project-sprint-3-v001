@@ -26,7 +26,7 @@ main_app_counter_pos = Counter("main_app_counter_pos", "Count of positive predic
 # обрабатываем запросы к корню приложения
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Hello ML-engineer"}
 
 # Создаем обработчик запросов для API
 app.handler = FastApiHandler()
