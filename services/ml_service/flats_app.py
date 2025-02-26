@@ -32,7 +32,7 @@ def read_root():
 app.handler = FastApiHandler()
 
 
-@app.post("/api/flats/") 
+@app.post("/api/get_prediction/") 
 def get_prediction_for_item(
     user_id: str,
     model_params: dict = Body(

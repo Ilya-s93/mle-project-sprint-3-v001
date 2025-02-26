@@ -20,10 +20,11 @@ pip install -r requirements.txt
 
 # команда запуска сервиса с помощью uvicorn
 uvicorn flats_app:app --reload --port 8081 --host 0.0.0.0
+```
 
 ### Пример curl-запроса к микросервису
-bash
-```
+
+```bash
 curl -X 'POST' \
   'http://127.0.0.1:8081/api/flats/?user_id=123' \
   -H 'accept: application/json' \
@@ -43,8 +44,8 @@ curl -X 'POST' \
   "living_area": 17.1,
   "rooms": 1,
   "studio": false,
-  "total_area": 42
-}'
+  "total_area": 42 
+  }'
 ```
 
 
@@ -67,32 +68,6 @@ docker stop ml_container
 docker rm ml_container
 ```
 
-### Пример curl-запроса к микросервису
-
-```bash
-curl -X 'POST' \
-  'http://127.0.0.1:8081/api/flats/?user_id=123' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "build_year": 2014,
-  "building_type_int": 2,
-  "latitude": 55.596458,
-  "longitude": 37.599823,
-  "ceiling_height": 2.8,
-  "flats_count": 912,
-  "floors_total": 23,
-  "has_elevator": false,
-  "floor": 10,
-  "is_apartment": false,
-  "kitchen_area": 11.6,
-  "living_area": 17.1,
-  "rooms": 1,
-  "studio": false,
-  "total_area": 42 
-  }'
-```
-
 ## 3. Docker compose для микросервиса и системы моониторинга
 
 ```bash
@@ -110,32 +85,6 @@ docker compose down
 
 # команда проверки действующих микросервисов
 docker compose ls
-```
-
-### Пример curl-запроса к микросервису
-
-```bash
-curl -X 'POST' \
-  'http://127.0.0.1:8081/api/flats/?user_id=123' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "build_year": 2014,
-  "building_type_int": 2,
-  "latitude": 55.596458,
-  "longitude": 37.599823,
-  "ceiling_height": 2.8,
-  "flats_count": 912,
-  "floors_total": 23,
-  "has_elevator": false,
-  "floor": 10,
-  "is_apartment": false,
-  "kitchen_area": 11.6,
-  "living_area": 17.1,
-  "rooms": 1,
-  "studio": false,
-  "total_area": 42 
-  }'
 ```
 
 ## 4. Скрипт симуляции нагрузки

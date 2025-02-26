@@ -61,12 +61,15 @@ class FastApiHandler:
                 bool: True - если есть нужные параметры, False - иначе
         """
         if "user_id" not in query_params or "model_params" not in query_params:
+            print("В запросе нет либо user_id, либо model_params")
             return False
         
         if not isinstance(query_params["user_id"], self.param_types["user_id"]):
+            print("Неправильный тип user_id")
             return False
                 
         if not isinstance(query_params["model_params"], self.param_types["model_params"]):
+            print("Неправильный тип model_params")
             return False
         return True
     
